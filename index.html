@@ -1,0 +1,1492 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<script src="static/js/wc-3.0.6.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="instap">
+	<link rel="stylesheet" href="static/css/katex.min.css">
+	<link rel="stylesheet" href="static/css/github-markdown.css" />
+	<title>小白·百宝箱</title>
+	<link href="static/css/m.1fa67fb2.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="static/css/chunk-b601d230.77c44edd.css">
+	<script type="module" crossorigin src="static/js/index-6bc5e0bb.js"></script>
+	<link rel="modulepreload" crossorigin href="/js/@vue-2fc1c7cc.js">
+	<link rel="modulepreload" crossorigin href="/js/axios-9e336316.js">
+	<link rel="modulepreload" crossorigin href="/js/vue-668898fa.js">
+	<link rel="modulepreload" crossorigin href="/js/@kangc-3fc074d1.js">
+	<link rel="modulepreload" crossorigin href="/js/crypto-js-0d22f585.js">
+	<link rel="modulepreload" crossorigin href="/js/@vant-7647c83a.js">
+	<link rel="modulepreload" crossorigin href="/js/vant-a006c60f.js">
+	<link rel="modulepreload" crossorigin href="/js/auth-fd3f9091.js">
+	<link rel="modulepreload" crossorigin href="/js/vue-router-2e9b4a11.js">
+	<link rel="modulepreload" crossorigin href="/js/preload-helper-9179353e.js">
+	<link rel="modulepreload" crossorigin href="/js/pinia-07c6e02c.js">
+	<link rel="modulepreload" crossorigin href="/js/index-4be55690.js">
+	<link rel="modulepreload" crossorigin href="/js/pinia-plugin-persist-70d140bd.js">
+	<link rel="modulepreload" crossorigin href="/js/store-7bb144d5.js">
+	<link rel="modulepreload" crossorigin href="/js/_plugin-vue_export-helper-1b428a4d.js">
+	<link rel="modulepreload" crossorigin href="/js/request-52e00d15.js">
+	<link rel="modulepreload" crossorigin href="/js/mitt-6b013584.js">
+	<link rel="modulepreload" crossorigin href="/js/js-md5-a4bbcee1.js">
+	<link rel="modulepreload" crossorigin href="/js/lodash-b78bb8e6.js">
+	<link rel="stylesheet" href="static/css/vant-4a92e339.css">
+	<link rel="stylesheet" href="static/css/request-14fb3cbf.css">
+	<link rel="stylesheet" href="static/css/index-a2cc14b4.css">
+	<style type="text/css">
+		.text1 {
+			font-size: 45px;
+			font-weight: normal;
+			text-transform: uppercase;
+			/*大写 lowercase小写；capitalize单词首字母大写*/
+			fill: none;
+			stroke: #B0E0E6;
+			stroke-width: 2px;
+			stroke-dasharray: 90 310;
+			animation: stroke 6s infinite linear;
+		}
+
+		.text-1 {
+			stroke: #FFEC8B;
+			animation-delay: -1.5s;
+			text-shadow: 5px 5px 5px #FFEC8B;
+		}
+
+		.text-2 {
+			stroke: #AEEEEE;
+			animation-delay: -3s;
+			text-shadow: 5px 5px 5px #7FFFD4;
+		}
+
+		.text-3 {
+			stroke: #EEE0E5;
+			animation-delay: -4.5s;
+			text-shadow: 5px 5px 5px #7FFFD4;
+		}
+
+		.text-4 {
+			stroke: #FFC1C1;
+			animation-delay: -6s;
+			text-shadow: 5px 5px 5px #7FFFD4;
+		}
+
+		@keyframes stroke {
+			to {
+				stroke-dashoffset: -400;
+			}
+		}
+	</style>
+	<style>
+		.loadingBox {
+			text-align: center;
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.apploading {
+			width: 40%;
+			height: 22px;
+			border-radius: 20px;
+			color: rgb(16, 163, 127);
+			border: 2px solid;
+			position: relative;
+			margin: auto;
+		}
+
+		.apploading::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			margin: 2px;
+			inset: 0 100% 0 0;
+			border-radius: inherit;
+			background: rgb(16, 163, 127);
+			animation: p 3s infinite;
+		}
+
+		.apploading::after {
+			content: "加载中";
+			color: #333;
+			width: 100%;
+			line-height: 1.1;
+			margin: 0 auto;
+			position: absolute;
+			margin: 2px;
+			left: 0;
+			inset: 0 100% 0 0;
+			border-radius: inherit;
+			animation: q 3s infinite;
+		}
+
+		@keyframes p {
+			100% {
+				inset: 0;
+			}
+		}
+
+		@keyframes q {
+			100% {
+				color: #fff;
+			}
+		}
+	</style>
+	<link rel="stylesheet" href="static/css/style.css">
+	<!-- 图标库 -->
+	<link rel="stylesheet" href="static/css/ionicons.min.css">
+</head>
+
+<body>
+	<div class="loadingBox" id="apploading">
+		<div class="apploading"></div>
+	</div>
+	<div id="app" style="display: none;">
+		<div data-v-1f9b29e2="" class="page-wrap">
+			<div data-v-1f9b29e2="" class="main-page" style="padding-top: 54px;">
+				<div data-v-1f9b29e2="" class="nav">
+					<span data-v-1f9b29e2="" class="logo.png"></span>
+
+					<a data-v-1f9b29e2="" href="https://bbx.hylove.top/" target="_blank"
+						class="app-name"></a>小白·百宝箱tools🛠
+					<!---->
+					<a data-v-1f9b29e2="" href="https://itab.hylove.top/" target="_blank" class="app-qr">首页</a>
+					<!---->
+					<a data-v-1f9b29e2="" href="#" class="app-qr" onclick="returnToTop()">回到顶部</a>
+					<!---->
+					<a data-v-1f9b29e2="" href="https://star.hylove.top/" target="_blank" class="app-qr">关于作者</a>
+				</div>
+				<div data-v-1f9b29e2="" class="new-header">
+					<div data-v-1f9b29e2="" class="user-profile">
+						<div data-v-1f9b29e2="" class="photo-wrap">
+							<!---->
+
+							<div data-v-1f9b29e2="" class="mood">
+								<div data-v-1f9b29e2="" class="mood-content">
+									<svg width="100%" height="80" style="margin:-30px auto">
+
+									</svg>
+
+								</div>
+							</div>
+							<div data-v-1f9b29e2="" class="photo">
+								<img data-v-1f9b29e2="" src="static/picture/loog.png">
+							</div>
+						</div>
+						<div data-v-1f9b29e2="" class="name">
+							<span data-v-1f9b29e2="" class="gender-icon "></span> 百宝箱
+							<span data-v-1f9b29e2="" class="constellation-icon"
+								style="margin: 0px 0px 6px 10px;"></span>
+						</div>
+						<p data-v-1f9b29e2="" class="desc">不念过往•逐梦向前</p>
+					</div>
+
+					<!--现在时间开始-->
+
+					<span id=localtime></span>
+
+					<script type="text/javascript">
+
+						function showLocale(objD) {
+
+							var str, colorhead, colorfoot;
+
+							var yy = objD.getYear();
+
+							if (yy < 1900) yy = yy + 1900;
+
+							var MM = objD.getMonth() + 1;
+
+							if (MM < 10) MM = '0' + MM;
+
+							var dd = objD.getDate();
+
+							if (dd < 10) dd = '0' + dd;
+
+							var hh = objD.getHours();
+
+							if (hh < 10) hh = '0' + hh;
+
+							var mm = objD.getMinutes();
+
+							if (mm < 10) mm = '0' + mm;
+
+							var ss = objD.getSeconds();
+
+							if (ss < 10) ss = '0' + ss;
+
+							var ww = objD.getDay();
+
+							if (ww == 0) colorhead = "<font color=\"#50c4e5\">";
+
+							if (ww > 0 && ww < 6) colorhead = "<font color=\"#50c4e5\">";
+
+							if (ww == 6) colorhead = "<font color=\"#50c4e5\">";
+
+							if (ww == 0) ww = "星期日";
+
+							if (ww == 1) ww = "星期一";
+
+							if (ww == 2) ww = "星期二";
+
+							if (ww == 3) ww = "星期三";
+
+							if (ww == 4) ww = "星期四";
+
+							if (ww == 5) ww = "星期五";
+
+							if (ww == 6) ww = "星期六";
+
+							colorfoot = "</font>"
+
+							str = colorhead + yy + "年" + MM + "月" + dd + "日 " + hh + "点" + mm + "分" + ss + "秒 " + ww + colorfoot;
+
+							return (str);
+
+						}
+
+						function tick() {
+
+							var today;
+
+							today = new Date();
+
+							document.getElementById("localtime").innerHTML = showLocale(today);
+
+							window.setTimeout("tick()", 1000);
+
+						}
+
+						tick();
+
+					</script>
+					<div style="float:right">本百宝箱应用已完成制作[<SPAN id=span_dt_dt style="color: #228B22; "></SPAN>
+						<SCRIPT language=javascript>function show_date_time() {
+
+								window.setTimeout("show_date_time()", 1000);
+
+								BirthDay = new Date("6/6/2024 23:00:00");
+
+								today = new Date();
+
+								timeold = (today.getTime() - BirthDay.getTime());
+
+								sectimeold = timeold / 1000
+
+								secondsold = Math.floor(sectimeold);
+
+								msPerDay = 24 * 60 * 60 * 1000
+
+								e_daysold = timeold / msPerDay
+
+								daysold = Math.floor(e_daysold);
+
+								e_hrsold = (e_daysold - daysold) * 24;
+
+								hrsold = Math.floor(e_hrsold);
+
+								e_minsold = (e_hrsold - hrsold) * 60;
+
+								minsold = Math.floor((e_hrsold - hrsold) * 60);
+
+								seconds = Math.floor((e_minsold - minsold) * 60);
+
+								span_dt_dt.innerHTML = '<font style=color:#FF0000>' + daysold + '</font> 天 <font style=color:#FF0000>' + hrsold + '</font> 时 <font style=color:#FF0000>' + minsold + '</font> 分 <font style=color:#FF0000>' + seconds + '</font> 秒';
+
+							}
+
+							show_date_time();</script>]
+
+						<html>
+						</style>
+						<div class="textwidget custom-html-widget">
+							<style>
+								#nr {
+									font-size: 20px;
+									margin: 0;
+									background: -webkit-linear-gradient(left, #ffffff, #ff0000 6.25%, #ff7d00 12.5%, #ffff00 18.75%, #00ff00 25%, #00ffff 31.25%, #0000ff 37.5%, #ff00ff 43.75%, #ffff00 50%, #ff0000 56.25%, #ff7d00 62.5%, #ffff00 68.75%, #00ff00 75%, #00ffff 81.25%, #0000ff 87.5%, #ff00ff 93.75%, #ffff00 100%);
+									-webkit-background-clip: text;
+									-webkit-text-fill-color: transparent;
+									background-size: 200% 100%;
+									animation: masked-animation 2s infinite linear;
+								}
+
+								@keyframes masked-animation {
+									0% {
+										background-position: 0 0;
+									}
+
+									100% {
+										background-position: -100%, 0;
+									}
+								}
+							</style>
+							<div
+								style="background-color:#333;border-radius:25px;box-shadow:0px 0px 5px #f200ff;padding:5px;margin-top:10px;margin-bottom:0px;">
+								<marquee>
+									<b id="nr"> 欢迎来到小白·百宝箱tools </b>
+								</marquee>
+							</div>
+						</div>
+						<!--联系页-->
+						<center>
+							<div class="annui">
+								<div class="an1">
+								</div>
+								<div class="ad">
+									<!--图片横幅广告
+<a href="gg.html"target="_blank" ><img src="static/picture/t053m000003uuuus1huyfw.gif" width="100%"></a>-->
+									<!--自适应文字广告
+<li><a href="https://cloud.mhjz1.cn/aff/DVDQGUTJ" target="_blank" style="line-height:60px;height:60px;color:#fff;background:#01AAED;text-align:center;font-size:24px;">嘿华-云</a></li>
+<li><a href="gg.html" target="_blank" style="line-height:60px; height:60px ;color:#fff; background:#2F4056; text-align:center; font-size:24px;" >广告招商 虚位以待</a></li>
+</div>
+<div class="txtguanggao">
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+<a href="gg.html" target="_blank" class="dh">超低价文字广告位</a>
+</div>-->
+									<!--
+<style>
+/**广告位**/
+.ad{background:#fff;overflow:hidden;clear:both;border-radius: 6px;}
+.ad a{margin:5px;display:block;border-radius:3px;}
+.ad img{max-width:100%;}
+.ad li{float:left;width:50%;list-style:none;}
+@media(max-width:999px) {
+.ad{margin: 0 0 10px 0;}
+.ad li{width:100%;}
+}
+/**新增文字广告**/
+.txtguanggao{
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+}
+.txtguanggao a{
+    width: calc((100% - 20px) / 4);
+    float: left;
+    border-radius: 2px;
+    line-height: 35.35px;
+    height: 35.35px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    background-color: rgb(255, 153, 159);
+    margin: 2.5px;
+    
+    transition-duration: .3s;
+}
+.txtguanggao a:nth-child(1) {
+    background-color: #dc3545;
+}
+.txtguanggao a:nth-child(2) {
+    background-color: #007bff;
+}
+.txtguanggao a:nth-child(3) {
+    background-color: #28a745;
+}
+.txtguanggao a:nth-child(4) {
+    background-color: #ffc107;
+}
+.txtguanggao a:nth-child(5) {
+    background-color: #28a745;
+}
+.txtguanggao a:nth-child(6) {
+    background-color: #ffc107;
+}
+a {
+  text-decoration: none;
+}
+.txtguanggao a:nth-child(7) {
+    background-color: #dc3545;
+}
+.txtguanggao a:nth-child(8){
+    background-color: #007bff;
+}
+.txtguanggao a:hover{
+background:#FF2805;color:#FFF
+}
+@media screen and (max-width: 1000px) {
+.txtguanggao a{
+   width: calc((100% - 10px) / 2);
+    float: left;
+    border-radius: 2px;
+    line-height: 35.35px;
+    height: 35.35px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    background-color: rgb(255, 153, 159);
+    margin: 2.5px;
+    transition-duration: .3s;
+}
+}
+  @media screen and (min-width: 1000px) {
+    .txtguanggao a{
+    width: calc((100% - 20px) / 4);
+    }}-->
+									</style>
+
+
+								</div>
+							</div>
+						</center>
+
+						<div data-v-1f9b29e2="" class="app-list">
+
+							<a data-v-1f9b29e2="" href="https://troy.js.org/fireworks-simulator/" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37c109f345e8d030dd6c3.png">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">烟花</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://www.52txr.cn/game/3DMF/index.html" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/pfbknl4.webp" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">魔方</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://3dys.hylove.top/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37bf49f345e8d030da62b.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">元素周期表</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://electronfish.netlify.app/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37bc39f345e8d030d6002.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">木鱼</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="http://wolfchen.top/ltmn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37c419f345e8d030e1f13.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">流体模拟器</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/sjsy/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37c5f9f345e8d030e4715.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">视觉盛宴</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="http://www.weasd.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37c9a9f345e8d030e9c80.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">罗盘时钟</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/fhyx/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37cc19f345e8d030ecdf1.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">负荷运行</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/2048/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37d029f345e8d030f2343.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">2048</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/sjtz/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37d1f9f345e8d030f49ea.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">视力挑战</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/fj/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37d3e9f345e8d030f799b.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">飞机避障</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/ddl/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37d569f345e8d030f9b1c.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">搭方块</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://cdn.198434.com/cli/H5/sheep2sheepkun/" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/pfbkmpf.jpg" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">坤了个坤</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/tcs/1.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65e37d7b9f345e8d030fca12.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">贪吃蛇</p>
+								</div>
+							</a>
+							<!--结束-->
+
+						</div>
+						<div data-v-1f9b29e2="" class="app-list">
+							<a data-v-1f9b29e2="" href="https://m.kugou.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/pfbkkx9.jpg" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">酷狗音乐</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://music.163.com/#" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/wangyiyunfavicon.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">网易云音乐</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://m.maigoo.com/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/pfbkfwq.jpg" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">云商城</p>
+								</div>
+
+							</a>
+
+						</a>
+						<a data-v-1f9b29e2="" href="https://tools.liumingye.cn/music/?page=searchPage#/recent" target="_blank" class="item" style="opacity: 1;">
+							<div data-v-1f9b29e2="" class="content-wrap">
+								<div data-v-1f9b29e2="" class="img-wrap">
+									<img data-v-1f9b29e2="" src="static/picture/myfreemusic.jpg" alt="">
+								</div>
+								<p data-v-1f9b29e2="" class="app-name">MyFreeMusic音乐平台</p>
+							</div>
+
+						</a>
+					</a>
+					<a data-v-1f9b29e2="" href="https://www.fangpi.net/" target="_blank" class="item" style="opacity: 1;">
+						<div data-v-1f9b29e2="" class="content-wrap">
+							<div data-v-1f9b29e2="" class="img-wrap">
+								<img data-v-1f9b29e2="" src="static/picture/fangpiyinyue.png" alt="">
+							</div>
+							<p data-v-1f9b29e2="" class="app-name">放屁音乐网</p>
+						</div>
+
+					</a>
+				</a>
+				<a data-v-1f9b29e2="" href="https://music.wujiyan.cc/" target="_blank" class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/guijiyanlogo.png" alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">基岩云音乐解析</p>
+
+					</div>
+				</a>
+			</a>
+			   <a data-v-1f9b29e2="" href="https://www.musicenc.com/" target="_blank" class="item" style="opacity: 1;">
+				  <div data-v-1f9b29e2="" class="content-wrap">
+					 <div data-v-1f9b29e2="" class="img-wrap">
+						<img data-v-1f9b29e2="" src="static/picture/Listenyinyue.jpg" alt="">
+					 </div>
+					 <p data-v-1f9b29e2="" class="app-name">全网MusicEnc-LRC</p>
+				 </div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://v.aikanbot.com/" target="_blank" class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/aikanrot-ico.png" alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">爱看机器人rot</p>
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://www.yjys01.com/" target="_blank" class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/quanwangtv.webp" alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">缘觉影视</p>
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://shouku123.com/tiantian" target="_blank" class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/didiaoguanyingtv.png" alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">低调观影</p>
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://yingheapp.com/" target="_blank" class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/yingheyingshinav.png" alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">硬核影视指南</p>
+					</div> 
+				</a>
+				<a data-v-1f9b29e2="" href="https://weread.qq.com/" target="_blank"
+					class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/wxbooksfavicon_24h.png"
+								alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">微信在线读书</p>
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://bks.thefuture.top/" target="_blank"
+					class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/thefuturebk.png"
+								alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">Thefuture书籍搜索</p>
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://www.sssam.com/" target="_blank"
+					class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/scihub-tools.png"
+								alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">SCI-hub搜索工具导航</p> 
+						
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://shu.ziyuandi.cn/" target="_blank" class="item"
+					style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/ziyaundibooknav.png"
+								alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">资源帝书籍导航</p>
+					</div>
+			          </a>
+							<a data-v-1f9b29e2="" href="https://www.shenmezhidedu.com/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">更多书籍</p>
+								</div>
+						</a>
+							<a data-v-1f9b29e2="" href="http://wz.wc6b.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">王者</p>
+								</div>
+
+							</a>
+
+							<a data-v-1f9b29e2="" href="http://ys.wc6b.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">原神</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="http://dw.wc6b.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">第五人格</p>
+								</div>
+
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://life.aizhancloud.cn/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">人生重开模拟器</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://temporary-mail.net/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">无限邮箱</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.bfsms.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">免费接码</p>
+								</div>
+							</a>
+						</a>
+						<a data-v-1f9b29e2="" href="https://funletu.com/emoji/#categories-I" target="_blank" class="item" style="opacity: 1;">
+							<div data-v-1f9b29e2="" class="content-wrap">
+								<div data-v-1f9b29e2="" class="img-wrap">
+									<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+										alt="">
+								</div>
+								<p data-v-1f9b29e2="" class="app-name">在线Emoji符号表情包大全</p>
+							</div>
+
+							<a data-v-1f9b29e2="" href="https://www.qiwangming.com/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">在线网名生成器</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="https://qb.heikebook.com/index" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">QQ绑查询</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://avsov.com/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">QQ更多功能</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://api.cyan-blue.cn/API/tools/video/" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">短视频无水印解析</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://watermark.liumingye.cn/" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">在线短视频解析</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://api.spapi.cn/" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">全网视频在线解析</p>
+								</div>
+							</a>
+						<a data-v-1f9b29e2="" href="https://mm.hylove.top/" target="_blank"
+							class="item" style="opacity: 1;">
+							<div data-v-1f9b29e2="" class="content-wrap">
+								<div data-v-1f9b29e2="" class="img-wrap">
+									<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+										alt="">
+								</div>
+								<p data-v-1f9b29e2="" class="app-name">在线随机视频1</p>
+							</div>
+
+						</a>
+					<a data-v-1f9b29e2="" href="https://97by.cn/sj" target="_blank"
+						class="item" style="opacity: 1;">
+						<div data-v-1f9b29e2="" class="content-wrap">
+							<div data-v-1f9b29e2="" class="img-wrap">
+								<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+									alt="">
+							</div>
+							<p data-v-1f9b29e2="" class="app-name">随机视频系列2</p>
+						</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://mm3.hylove.top/" target="_blank"
+					class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+								alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">在线随机视频3</p>
+					</div>
+				</a>
+				<a data-v-1f9b29e2="" href="https://xydh.fun/JCI666" target="_blank"
+					class="item" style="opacity: 1;">
+					<div data-v-1f9b29e2="" class="content-wrap">
+						<div data-v-1f9b29e2="" class="img-wrap">
+							<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+								alt="">
+						</div>
+						<p data-v-1f9b29e2="" class="app-name">万物皆可解析</p>
+					</div>
+
+				</a>
+							<a data-v-1f9b29e2="" href="2.html" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">更多有趣</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.gaitubao.com/compress-png" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/gaitubao-icon.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">改图宝-在线图片无损压缩</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://imagestool.com/zh_CN/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/imagestools-ico.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">images在线图片工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://app.xunjiepdf.com/caijian/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/xunjie-icon.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">在线裁剪图片工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.onlinedo.cn/pic-circle" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/pic-circle.jpeg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">在线圆形图片裁剪</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="http://q.52as.fun/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/jietutools.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">微信各种截图制作工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.uugai.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/ugaiwang-ico.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">U钙网-网站logo图标生成</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.ilovepdf.com/zh-cn" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/ilovepdf-ico.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">ilovepdf</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://tools.pdf24.org/zh/all-tools" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/pdf24.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">24pdf工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="http://qwq.tangdouz.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/apidh_dl.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">API导航站</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://52as.fun/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/anshengAPI-nav.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">安生API导航</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="https://api.aa1.cn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/xiarou-api.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">夏柔API</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://api.qqsuu.cn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65eb1e949f345e8d03d0f94c.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">大米API</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="https://yuanxiblog.cn/category-3.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/yuanxiblogwebyuanma.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">建站源码</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.115s.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/115syuanma.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">115免费源码网</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://a-aa.top/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65eb4c7d9f345e8d0369f2fc.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">Ablog源码网</p>
+								</div>
+							<a data-v-1f9b29e2="" href="https://www.xkwo.com/wzzy/33" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/xiaok-yuanma.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">小K源码网站</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://yibazhan.cn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/yuanxiblogwebyuanma.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">在线扒站工具</p>
+								</div>
+							</a>
+
+							<a data-v-1f9b29e2="" href="https://www.toolnb.com/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">更多实用</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="https://www.yikm.net/#google_vignette" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">在线小霸王</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://xingye.me/game/index.php?tab=1" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">星夜小游戏</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://tcping8.com/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">网站测速</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.goodsunlc.com/status/screenshots/alisjzd.html"
+								target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">支付宝支付截图</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://zy.xywlapi.cc/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">QQ查询-XApi</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://hy.httpcn.com/hzzpy/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">汉字转拼音</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="https://kunkun.cyou/1.html" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">粒子动画</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://sfz.tool90.com/sfz/generate.html" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">身份证生成</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://wzapi.cn/wp/" class="item" target="_blank"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">小优网盘外链</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://too.st/" class="item" target="_blank"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">太短外链生成</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="https://www.haoruanmao.com/short-link-generation-platform.html" class="item" target="_blank"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">短链接生成合集文章</p>
+								</div>
+								<a data-v-1f9b29e2="" href="https://riqicha.bmcx.com/" class="item" target="_blank"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">日期差计算工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.bmcx.com/" class="item" target="_blank"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/65ea44a69f345e8d03a5ea25.webp"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">便民查询工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.bmcx.com/" class="item" target="_blank"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">更多工具</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="https://fuliba2023.net/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/fulibalogo.jpg"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">福利吧首页</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://www.52pojie.cn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/52pj.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">吾爱破解论坛</p>
+								</div>
+
+							</a>
+							<a data-v-1f9b29e2="" href="https://4fb.cn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/4fbico.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">4分贝分享网</p>
+								</div>
+							
+							<a data-v-1f9b29e2="" href="https://hao.logosc.cn/" target="_blank" class="item"
+								style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/shenqiji.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">神器集</p>
+								</div>
+                            </a>
+							<a data-v-1f9b29e2="" href="http://bbx.hylove.top/" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">百宝箱-主页</p>
+								</div>
+							</a>
+							<a data-v-1f9b29e2="" href="http://lixinyuanqi.ysepan.com/" target="_blank"
+								class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png"
+											alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">百宝箱-外链永硕e盘</p>
+								</div>
+								<a data-v-1f9b29e2=""href="https://dh.hylove.top/"
+								target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/dh.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">百宝箱-小白导航</p>
+								</div>
+							</a>
+						</a>
+						<a data-v-1f9b29e2="" href="https://ai.hylove.top/" target="_blank" class="item" style="opacity: 1;">
+							<div data-v-1f9b29e2="" class="content-wrap">
+								<div data-v-1f9b29e2="" class="img-wrap">
+									<img data-v-1f9b29e2="" src="static/picture/aigc-bubainav.png" alt="">
+								</div>
+								<p data-v-1f9b29e2="" class="app-name">AIGC卟白·导航</p>
+							</div>
+
+							</a>
+						    <a data-v-1f9b29e2=""href="https://nav.lxyq.link/"
+								target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/lxyq-webnav.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">砺心缘起·网址导航</p>
+								</div>
+							</a>
+						</a>
+
+					   </a>
+					  <a data-v-1f9b29e2=""href="https://hav.hylove.top/"
+						target="_blank" class="item" style="opacity: 1;">
+						<div data-v-1f9b29e2="" class="content-wrap">
+							<div data-v-1f9b29e2="" class="img-wrap">
+								<img data-v-1f9b29e2="" src="static/picture/xiaobaihav.png" alt="">
+							</div>
+							<p data-v-1f9b29e2="" class="app-name">hav导航-一站式综合导航！</p>
+						</div>
+					</a>
+					<a data-v-1f9b29e2=""href="https://xydh.fun/lovezy"
+					  target="_blank" class="item" style="opacity: 1;">
+					  <div data-v-1f9b29e2="" class="content-wrap">
+						  <div data-v-1f9b29e2="" class="img-wrap">
+							  <img data-v-1f9b29e2="" src="static/picture/daxuestudylovezy.jpg" alt="">
+						  </div>
+						  <p data-v-1f9b29e2="" class="app-name">大学生搬砖之家</p>
+					  </div>
+					</a>
+					<a data-v-1f9b29e2="" href="http://lovehy.ysepan.com/" target="_blank" class="item" style="opacity: 1;">
+						<div data-v-1f9b29e2="" class="content-wrap">
+							<div data-v-1f9b29e2="" class="img-wrap">
+								<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+							</div>
+							<p data-v-1f9b29e2="" class="app-name">更多资源</p>
+						</div>
+
+					</a>
+					   </a>
+
+						    <a data-v-1f9b29e2="" href="https://wwp.lanzoup.com/i6KT91zxrwyd?p" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">百宝箱APP下载</p>
+								</div>
+
+							</a>
+						
+						</a>
+						    <a data-v-1f9b29e2="" href="http://xb.hylove.top/" target="_blank" class="item"
+							    style="opacity: 1;">
+							    <div data-v-1f9b29e2="" class="content-wrap">
+								<div data-v-1f9b29e2="" class="img-wrap">
+									<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+								</div>
+								<p data-v-1f9b29e2="" class="app-name">旗下官网</p>
+							</div>
+
+						   </a>
+							</a>
+							<a data-v-1f9b29e2="" href="https://docs.qq.com/doc/DZmR1U2ZtSG1MVW1U" target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">加入交流群</p>
+								</div>
+
+							</a>
+							
+							<a data-v-1f9b29e2=""
+								href="https://star.hylove.top/"
+								target="_blank" class="item" style="opacity: 1;">
+								<div data-v-1f9b29e2="" class="content-wrap">
+									<div data-v-1f9b29e2="" class="img-wrap">
+										<img data-v-1f9b29e2="" src="static/picture/loog.png" alt="">
+									</div>
+									<p data-v-1f9b29e2="" class="app-name">关于小白</p>
+								</div>
+
+							</a>
+						</a>
+
+
+
+
+
+
+
+
+
+							<script>
+								t.onclick = function () { wc.goQQFriend("2136857424") }
+								tt.onclick = function () { wc.goQQGroup(00000) }
+							</script>
+						</div>
+					</div>
+					<div data-v-1cb8f412="" data-v-1f9b29e2="" class="wrap">
+						<a data-v-1cb8f412="" href="https://icp.gov.moe/" target="_blank">萌ICP备20240526213号 @copyright
+							by 小白^卟白</a>
+					</div>
+					<br><br>
+					<div class="navigation">
+						<div class="menuToggle">
+							<i></i>
+						</div>
+						<div class="menu">
+							<ul>
+								<li style="--i:0.1s"><a href="https://dh.hylove.top" target="_blank"><i
+											class="icon ion-ios-home-outline"></i></a></li>
+								<li style="--i:0.2s"><a href="https://hylove.top/about" target="_blank"><i
+											class="icon ion-ios-person-outline"></i></a></li>
+								<li></li>
+								<li style="--i:0.2s"><a href="http://5.2cnm.cn" target="_blank"><i
+											class="icon ion-ios-heart-outline"></i></a></li>
+								<li style="--i:0.1s"><a href="https://itab.hylove.top" target="_blank"><i
+											class="icon ion-ios-bell-outline"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<script src="static/js/script.js"></script>
+				</div>
+			</div>
+
+			<div class="core-footer">
+				<div class="footer-main container">
+					<div class="footer-left">
+						<div>
+
+						</div>
+
+
+
+
+
+						<script src="static/js/jquery.min.js"></script>
+						<script src="static/js/mouse.js"></script><!-- 点击烟花特效 -->
+						<!-- 引入悬浮音乐播放器开始 -->
+						<script src="static/js/xfyybfq.js"></script>
+						<!-- 引入悬浮音乐播放器结束 -->
+
+</html>
+</style>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+<!-- 弹窗开始 -->
+<script>
+	$(document).ready(function () {
+		// 模拟异步加载数据的过程  
+		setTimeout(function () {
+			// 隐藏加载动画  
+			$('#apploading').hide();
+			// 显示应用内容  
+			$('#app').show();
+		}, 2000); // 假设数据加载需要2秒  
+	});
+</script>
+<!-- 弹窗结束 -->
